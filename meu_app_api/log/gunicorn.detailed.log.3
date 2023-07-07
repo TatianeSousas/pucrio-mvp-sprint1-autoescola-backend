@@ -1,0 +1,70 @@
+[2023-06-28 16:04:11,079] ERROR log_exception() L1449 Exception on /aluno [POST] - call_trace=/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/flask/app.py L1449
+Traceback (most recent call last):
+  File "/Users/victorximenis/Downloads/aula-3/meu_app_api/app.py", line 219, in add_aluno
+    return apresenta_produto(aluno), 200
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/victorximenis/Downloads/aula-3/meu_app_api/schemas/produto.py", line 69, in apresenta_produto
+    "quantidade": produto.quantidade,
+                  ^^^^^^^^^^^^^^^^^^
+AttributeError: 'Aluno' object has no attribute 'quantidade'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/flask/app.py", line 1519, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/flask/app.py", line 1517, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/flask/app.py", line 1503, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/flask_openapi3/scaffold.py", line 191, in wrapper
+    resp = _do_wrapper(
+           ^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/flask_openapi3/do_wrapper.py", line 135, in _do_wrapper
+    response = func(**request_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/victorximenis/Downloads/aula-3/meu_app_api/app.py", line 232, in add_aluno
+    return {"mesage": error_msg}, 400
+                      ^^^^^^^^^
+UnboundLocalError: cannot access local variable 'error_msg' where it is not associated with a value
+[2023-06-28 16:04:11,085] INFO _log() L224  127.0.0.1 - - [28/Jun/2023 16:04:11] "[35m[1mPOST /aluno HTTP/1.1[0m" 500 - - call_trace=/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/werkzeug/_internal.py L224 
+[2023-06-28 16:04:38,317] INFO _log() L224   * Detected change in '/Users/victorximenis/Downloads/aula-3/meu_app_api/app.py', reloading - call_trace=/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/werkzeug/_internal.py L224 
+[2023-06-28 16:07:00,124] INFO _log() L224   * Detected change in '/Users/victorximenis/Downloads/aula-3/meu_app_api/app.py', reloading - call_trace=/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/werkzeug/_internal.py L224 
+[2023-06-28 16:07:14,024] INFO _log() L224   * Running on all addresses (0.0.0.0)
+   WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.2.203:5001 (Press CTRL+C to quit) - call_trace=/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/werkzeug/_internal.py L224 
+[2023-06-28 16:07:14,025] INFO _log() L224   * Restarting with stat - call_trace=/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/werkzeug/_internal.py L224 
+[2023-06-28 16:07:19,842] INFO _log() L224  127.0.0.1 - - [28/Jun/2023 16:07:19] "POST /aluno HTTP/1.1" 200 - - call_trace=/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/werkzeug/_internal.py L224 
+[2023-06-28 16:07:37,244] INFO _log() L224  127.0.0.1 - - [28/Jun/2023 16:07:37] "GET /alunos HTTP/1.1" 200 - - call_trace=/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/werkzeug/_internal.py L224 
+[2023-06-28 16:08:00,443] INFO _log() L224  127.0.0.1 - - [28/Jun/2023 16:08:00] "DELETE /aluno?documento=13217432703 HTTP/1.1" 200 - - call_trace=/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/werkzeug/_internal.py L224 
+[2023-06-28 16:08:07,948] INFO _log() L224  127.0.0.1 - - [28/Jun/2023 16:08:07] "GET /alunos HTTP/1.1" 200 - - call_trace=/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/werkzeug/_internal.py L224 
+[2023-06-28 16:08:31,026] INFO _log() L224   * Detected change in '/Users/victorximenis/Downloads/aula-3/meu_app_api/app.py', reloading - call_trace=/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/werkzeug/_internal.py L224 
+[2023-06-28 16:08:31,343] INFO _log() L224   * Restarting with stat - call_trace=/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/werkzeug/_internal.py L224 
+[2023-06-28 16:08:35,253] INFO _log() L224  127.0.0.1 - - [28/Jun/2023 16:08:35] "GET /openapi/swagger HTTP/1.1" 200 - - call_trace=/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/werkzeug/_internal.py L224 
+[2023-06-28 16:08:35,331] INFO _log() L224  127.0.0.1 - - [28/Jun/2023 16:08:35] "[36mGET /openapi/static/css/swagger-ui.css HTTP/1.1[0m" 304 - - call_trace=/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/werkzeug/_internal.py L224 
+[2023-06-28 16:08:35,347] INFO _log() L224  127.0.0.1 - - [28/Jun/2023 16:08:35] "[36mGET /openapi/static/js/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 - - call_trace=/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/werkzeug/_internal.py L224 
+[2023-06-28 16:08:35,347] INFO _log() L224  127.0.0.1 - - [28/Jun/2023 16:08:35] "GET /openapi/static/js/swagger-ui-bundle.js HTTP/1.1" 200 - - call_trace=/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/werkzeug/_internal.py L224 
+[2023-06-28 16:08:35,460] INFO _log() L224  127.0.0.1 - - [28/Jun/2023 16:08:35] "GET /openapi/openapi.json HTTP/1.1" 200 - - call_trace=/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/werkzeug/_internal.py L224 
+[2023-06-28 16:08:35,481] INFO _log() L224  127.0.0.1 - - [28/Jun/2023 16:08:35] "[36mGET /openapi/static/images/swagger.svg HTTP/1.1[0m" 304 - - call_trace=/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/werkzeug/_internal.py L224 
+[2023-06-28 16:09:03,072] INFO _log() L224   * Detected change in '/Users/victorximenis/Downloads/aula-3/meu_app_api/app.py', reloading - call_trace=/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/werkzeug/_internal.py L224 
+[2023-06-28 16:09:03,186] INFO _log() L224   * Restarting with stat - call_trace=/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/werkzeug/_internal.py L224 
+[2023-06-28 16:09:05,852] INFO _log() L224  127.0.0.1 - - [28/Jun/2023 16:09:05] "GET /openapi/swagger HTTP/1.1" 200 - - call_trace=/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/werkzeug/_internal.py L224 
+[2023-06-28 16:09:05,894] INFO _log() L224  127.0.0.1 - - [28/Jun/2023 16:09:05] "[36mGET /openapi/static/css/swagger-ui.css HTTP/1.1[0m" 304 - - call_trace=/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/werkzeug/_internal.py L224 
+[2023-06-28 16:09:05,900] INFO _log() L224  127.0.0.1 - - [28/Jun/2023 16:09:05] "[36mGET /openapi/static/js/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 - - call_trace=/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/werkzeug/_internal.py L224 
+[2023-06-28 16:09:05,901] INFO _log() L224  127.0.0.1 - - [28/Jun/2023 16:09:05] "[36mGET /openapi/static/js/swagger-ui-bundle.js HTTP/1.1[0m" 304 - - call_trace=/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/werkzeug/_internal.py L224 
+[2023-06-28 16:09:05,971] INFO _log() L224  127.0.0.1 - - [28/Jun/2023 16:09:05] "GET /openapi/openapi.json HTTP/1.1" 200 - - call_trace=/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/werkzeug/_internal.py L224 
+[2023-06-28 16:09:05,980] INFO _log() L224  127.0.0.1 - - [28/Jun/2023 16:09:05] "[36mGET /openapi/static/images/swagger.svg HTTP/1.1[0m" 304 - - call_trace=/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/werkzeug/_internal.py L224 
+[2023-06-28 16:14:05,373] INFO _log() L224  127.0.0.1 - - [28/Jun/2023 16:14:05] "POST /aluno HTTP/1.1" 200 - - call_trace=/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/werkzeug/_internal.py L224 
+[2023-06-28 16:15:48,924] INFO _log() L224  127.0.0.1 - - [28/Jun/2023 16:15:48] "GET /alunos HTTP/1.1" 200 - - call_trace=/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/werkzeug/_internal.py L224 
+[2023-06-28 16:18:54,786] INFO _log() L224  127.0.0.1 - - [28/Jun/2023 16:18:54] "GET /alunos HTTP/1.1" 200 - - call_trace=/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/werkzeug/_internal.py L224 
+[2023-06-28 16:20:08,808] INFO _log() L224  127.0.0.1 - - [28/Jun/2023 16:20:08] "GET /alunos HTTP/1.1" 200 - - call_trace=/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/werkzeug/_internal.py L224 
